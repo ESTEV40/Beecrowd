@@ -2,6 +2,19 @@
 
 using namespace std;
 
+/*
+    recursivamente também
+    
+    if (Noglo[j] > Quadro[i]) {
+        // Noglo[j] can win against Quadro[i]. Recurse to the next elements.
+        return 1 + ContBattles(Quadro, Noglo, i - 1, j - 1);
+    } else {
+        // Noglo[j] cannot win against Quadro[i]. Recurse only in Quadro.
+        return ContBattles(Quadro, Noglo, i - 1, j);
+    }
+
+*/
+
 int main (){
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
@@ -26,7 +39,7 @@ int main (){
 
         int contBattles = 0;
 
-        for(int i = Quadro.size()-1, j = Noglo.size()-1; i >= 0; i--){
+        for(int i = Nsol-1, j = Nsol-1; i >= 0; i--){
             if(Noglo[j] > Quadro[i]){
                 contBattles++;
                 j--;
